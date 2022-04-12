@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Enable git longpaths
           command: |
-            cd HellowWorld
+            cd HelloWorld
             git config core.longpaths true
           shell: bash.exe
       - checkout
