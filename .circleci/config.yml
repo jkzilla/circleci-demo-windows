@@ -57,10 +57,11 @@ jobs:
       shell: powershell.exe
     working_directory: C:\Users\circleci\project\HelloWorld
     steps:
+      - checkout
       - run:
           name: Enable git longpaths
           command: |
-            cd C:\Users\circleci\project
+            cd HellowWorld
             git config core.longpaths true
           shell: bash.exe
       - checkout
