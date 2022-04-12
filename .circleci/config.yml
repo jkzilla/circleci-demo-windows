@@ -56,6 +56,10 @@ jobs:
       name: win/default
       shell: powershell.exe
     steps:
+      - run:
+          name: Enable git longpaths
+          command: git config core.longpaths true
+          shell: /bin/bash
       - checkout
       - run: choco install winappdriver
       - run: 
