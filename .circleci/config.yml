@@ -55,10 +55,13 @@ jobs:
     executor:
       name: win/default
       shell: powershell.exe
+    working_directory: C:\Users\circleci\project\HelloWorld
     steps:
       - run:
           name: Enable git longpaths
-          command: git config core.longpaths true
+          command: |
+            cd C:\Users\circleci\project
+            git config core.longpaths true
           shell: bash.exe
       - checkout
       - run: choco install winappdriver
