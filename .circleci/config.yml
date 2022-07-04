@@ -14,9 +14,10 @@ jobs:
             mkdir test-project
             cd test-project
             npm install keytar
-            node -e "require('keytar').setPassword('test-service', process.env['USERNAME'], 'test-password’)"
+            node -e "require('keytar').setPassword('test-service', process.env['USERNAME'], $TEST_PASSWORD)"
 
 workflows:
   always-on-commit:
     jobs:
-      - win-test
+      - win-test:
+        contexts: [windows-password]
